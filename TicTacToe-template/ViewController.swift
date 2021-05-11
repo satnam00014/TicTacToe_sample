@@ -12,6 +12,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var outputLabel: UILabel!
     
+    //following are the iboutlet for buttons
+    //they are used during reset process
     @IBOutlet weak var x1: UIButton!
     @IBOutlet weak var x2: UIButton!
     @IBOutlet weak var x3: UIButton!
@@ -25,13 +27,13 @@ class ViewController: UIViewController {
     
     var isFirstPlayer = true
     var buttonTags :[Int] = []
+    // values are used to check if player wins or not
     var values = ["1","2","3","4","5","6","7","8","9"]
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-    
     @IBAction func playerInput(_ sender: UIButton) {
         let tag = sender.tag
         
@@ -93,6 +95,7 @@ class ViewController: UIViewController {
         return false
     }
     
+    //following is reset funtion
     func reset(){
         isFirstPlayer = true
         for i in 0...8{
